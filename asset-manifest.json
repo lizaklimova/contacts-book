@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/contacts-book/static/css/main.cd2e038f.css",
+    "main.js": "/contacts-book/static/js/main.a7d14755.js",
+    "static/js/613.9eb73320.chunk.js": "/contacts-book/static/js/613.9eb73320.chunk.js",
+    "static/js/826.0b16cb66.chunk.js": "/contacts-book/static/js/826.0b16cb66.chunk.js",
+    "static/js/687.1aa01dc6.chunk.js": "/contacts-book/static/js/687.1aa01dc6.chunk.js",
+    "static/js/822.111eb17e.chunk.js": "/contacts-book/static/js/822.111eb17e.chunk.js",
+    "static/js/640.a2668723.chunk.js": "/contacts-book/static/js/640.a2668723.chunk.js",
+    "static/js/118.fc90c7d5.chunk.js": "/contacts-book/static/js/118.fc90c7d5.chunk.js",
+    "static/js/198.478aa862.chunk.js": "/contacts-book/static/js/198.478aa862.chunk.js",
+    "static/media/sky.jpg": "/contacts-book/static/media/sky.1518e527c59aeba537a2.jpg",
+    "static/media/body-bg.jpg": "/contacts-book/static/media/body-bg.80c5d8b599bfcbe82db9.jpg",
+    "static/media/home-element.png": "/contacts-book/static/media/home-element.5de339225647aef59d50.png",
+    "static/media/home.png": "/contacts-book/static/media/home.0b8a270ec19b96096f8e.png",
+    "static/media/moon.png": "/contacts-book/static/media/moon.ac3339025d65fdc47afb.png",
+    "static/media/earth.png": "/contacts-book/static/media/earth.86c46cf6b8f2fe55e093.png",
+    "static/media/astronaut.png": "/contacts-book/static/media/astronaut.31f394ad16aabbe39186.png",
+    "index.html": "/contacts-book/index.html",
+    "main.cd2e038f.css.map": "/contacts-book/static/css/main.cd2e038f.css.map",
+    "main.a7d14755.js.map": "/contacts-book/static/js/main.a7d14755.js.map",
+    "613.9eb73320.chunk.js.map": "/contacts-book/static/js/613.9eb73320.chunk.js.map",
+    "826.0b16cb66.chunk.js.map": "/contacts-book/static/js/826.0b16cb66.chunk.js.map",
+    "687.1aa01dc6.chunk.js.map": "/contacts-book/static/js/687.1aa01dc6.chunk.js.map",
+    "822.111eb17e.chunk.js.map": "/contacts-book/static/js/822.111eb17e.chunk.js.map",
+    "640.a2668723.chunk.js.map": "/contacts-book/static/js/640.a2668723.chunk.js.map",
+    "118.fc90c7d5.chunk.js.map": "/contacts-book/static/js/118.fc90c7d5.chunk.js.map",
+    "198.478aa862.chunk.js.map": "/contacts-book/static/js/198.478aa862.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd2e038f.css",
+    "static/js/main.a7d14755.js"
+  ]
+}
