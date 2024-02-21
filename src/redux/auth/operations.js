@@ -2,7 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { error } from "notifications/notiflixInit";
 
-axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
+axios.defaults.baseURL = "https://contacts-book-backend-38as.onrender.com";
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -25,10 +25,7 @@ export const register = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      console.log(error);
-      notifyError(
-        "Your password must include at least 7 symbols and one uppercase letter"
-      );
+      notifyError(error.response.data.message)
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -42,8 +39,9 @@ export const login = createAsyncThunk(
 
       setAuthHeader(data.token);
       return data;
-    } catch ({ message }) {
-      return thunkApi.rejectWithValue(message);
+    } catch (error) {
+      notifyError(error.response.data.message)
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
@@ -53,7 +51,7 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkApi) => {
     const { data } = await axios.post("users/logout");
     clearAuthHeader();
     return data;
-  } catch ({ message }) {
+  } catch ({message}) {
     return thunkApi.rejectWithValue(message);
   }
 });

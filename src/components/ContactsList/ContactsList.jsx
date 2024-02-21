@@ -45,10 +45,10 @@ export default function ContactsList({ openModal, setIsAdding }) {
 
       <ContactsUl>
         {filteredContacts.length > 0 ? (
-          filteredContacts.map(({ id, name, number }) => (
+          filteredContacts.map(({ _id, name, number }) => (
             <ContactEl
-              key={id}
-              id={id}
+              key={_id}
+              id={_id}
               name={name}
               number={number}
               openModal={openModal}

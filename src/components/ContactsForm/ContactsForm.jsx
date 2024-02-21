@@ -60,7 +60,7 @@ export default function ContactsForm({ closeModal, action }) {
     return contacts.find((contact) => contact.number === value);
   };
 
-  const value = contacts.find((el) => el.id === curId);
+  const value = contacts.find((el) => el._id === curId);
 
   return (
     <>

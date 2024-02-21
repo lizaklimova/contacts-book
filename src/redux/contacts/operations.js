@@ -1,12 +1,5 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { error } from "notifications/notiflixInit";
-
-// axios.defaults.baseURL = "https://connections-api.herokuapp.com/";
-
-const notifyError = (message) => {
-  error(message);
-};
 
 export const fetchContacts = createAsyncThunk(
   "contacts/getContacts",
@@ -16,7 +9,6 @@ export const fetchContacts = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
-      notifyError(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -30,7 +22,6 @@ export const addContact = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
-      notifyError(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -44,7 +35,6 @@ export const deleteContact = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
-      notifyError(message);
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -58,7 +48,6 @@ export const editContact = createAsyncThunk(
 
       return data;
     } catch ({ message }) {
-      notifyError(message);
       return thunkAPI.rejectWithValue(message);
     }
   }

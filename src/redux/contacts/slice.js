@@ -56,7 +56,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
-          (contact) => contact.id === payload.id
+          (contact) => contact._id === payload._id
         );
         state.items.splice(index, 1);
       })
@@ -66,7 +66,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = state.items.map((el) => {
-          if (el.id === payload.id) return payload;
+          if (el._id === payload._id) return payload;
           return el;
         });
       })
