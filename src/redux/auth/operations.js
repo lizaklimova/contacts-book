@@ -25,7 +25,7 @@ export const register = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      notifyError(error.response.data.message)
+      notifyError(error.response.data.message);
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -40,7 +40,7 @@ export const login = createAsyncThunk(
       setAuthHeader(data.token);
       return data;
     } catch (error) {
-      notifyError(error.response.data.message)
+      notifyError(error.response.data.message);
       return thunkApi.rejectWithValue(error.message);
     }
   }
@@ -51,7 +51,7 @@ export const logOut = createAsyncThunk("auth/logout", async (_, thunkApi) => {
     const { data } = await axios.post("users/logout");
     clearAuthHeader();
     return data;
-  } catch ({message}) {
+  } catch ({ message }) {
     return thunkApi.rejectWithValue(message);
   }
 });
@@ -70,3 +70,35 @@ export const refresh = createAsyncThunk("auth/refresh", async (_, thunkApi) => {
     return thunkApi.rejectWithValue(message);
   }
 });
+
+export const changeAvatar = createAsyncThunk(
+  "contacts/updateAvatar",
+  async (avatar, thunkAPI) => {
+    const formData = new FormData();
+    formData.append("avatar", avatar);
+
+    try {
+      const { data } = await axios.patch("users/updateAvatar", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      return data.avatarURL;
+    } catch (error) {
+      notifyError(error.response.data.message);
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateUserName = createAsyncThunk(
+  "contacts/updateName",
+  async (name, thunkAPI) => {
+    try {
+      const { data } = await axios.patch("users/updateName", { name });
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

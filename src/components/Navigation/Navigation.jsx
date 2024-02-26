@@ -13,6 +13,7 @@ const Navigation = ({ openMenu }) => {
       <NavDiv>
         <NavigLink to="/">Home</NavigLink>
         {isLoggedIn && <NavigLink to="/contacts">Contacts</NavigLink>}
+        {isLoggedIn && <NavigLink to="/profile">Profile</NavigLink>}
       </NavDiv>
 
       {isLoggedIn && window.innerWidth < 767 ? (

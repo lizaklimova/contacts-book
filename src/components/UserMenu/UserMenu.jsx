@@ -1,9 +1,8 @@
 import { useDispatch } from "react-redux";
-import { FaUser } from "react-icons/fa";
 import { IoExitOutline } from "react-icons/io5";
 import { useAuth } from "hooks";
 import { logOut } from "../../redux/auth/operations";
-import { UserName, LogoutBtn } from "./UserMenu.styled";
+import { UserAvatar, UserInfo, LogoutBtn } from "./UserMenu.styled";
 import { NavDiv } from "../Navigation/Navigation.styled";
 
 const UserMenu = ({ mob, closeMenu }) => {
@@ -18,10 +17,15 @@ const UserMenu = ({ mob, closeMenu }) => {
 
   return (
     <NavDiv $variant={mob}>
-      <UserName>
-        <FaUser size={15} />
-        <span>{user.name}</span>
-      </UserName>
+      <UserInfo>
+        <UserAvatar
+          src={user.avatarURL}
+          alt="user avatar"
+          width={50}
+          height={50}
+        />
+        <p>{user.name}</p>
+      </UserInfo>
       <LogoutBtn type="button" onClick={handleLogout}>
         Logout
         <IoExitOutline size={20} />

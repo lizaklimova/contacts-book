@@ -1,20 +1,35 @@
 import styled from "styled-components";
 
-export const UserName = styled.p`
+export const UserInfo = styled.div`
   position: relative;
-  font-size: ${({ theme }) => theme.fontSizes.medium};
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 15px;
 
-  span {
-    height: 90%;
-    align-self: flex-end;
+  p {
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+
+    @media screen and (min-width: 768px) {
+      font-size: ${({ theme }) => theme.fontSizes.large};
+    }
   }
+`;
+
+export const UserAvatar = styled.img`
+  width: ${({ $variant }) => ($variant ? "100px" : "50px")};
+  height: ${({ $variant }) => ($variant ? "100px" : "50px")};
+  border-radius: 50%;
+  object-fit: cover;
 
   @media screen and (min-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.large};
+    width: ${({ $variant }) => ($variant ? "130px" : "50px")};
+    height: ${({ $variant }) => ($variant ? "130px" : "50px")};
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: ${({ $variant }) => ($variant ? "150px" : "50px")};
+    height: ${({ $variant }) => ($variant ? "150px" : "50px")};
   }
 `;
 

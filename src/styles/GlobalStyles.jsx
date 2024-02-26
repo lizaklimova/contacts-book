@@ -53,7 +53,6 @@ button {
 
 input {
   font-family: inherit;
-    
 }
 
 
