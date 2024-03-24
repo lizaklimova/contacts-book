@@ -2,8 +2,9 @@ import { useDispatch } from "react-redux";
 import { IoMdAdd } from "react-icons/io";
 import { FaUserEdit } from "react-icons/fa";
 import { useAuth } from "hooks";
-import { UserAvatar } from "components/UserMenu/UserMenu.styled";
 import { changeAvatar, updateUserName } from "../../redux/auth/operations";
+import Loader from "components/Loader";
+import { UserAvatar } from "components/UserMenu/UserMenu.styled";
 import {
   UpdateProfileWrap,
   AvatarChangeWrap,
@@ -11,7 +12,7 @@ import {
 } from "./UpdateProfile.styled";
 
 const UpdateProfile = () => {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const dispatch = useDispatch();
 
   const onUserDataUpdate = (e) => {
@@ -27,7 +28,9 @@ const UpdateProfile = () => {
     dispatch(changeAvatar(e.target.files[0]));
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <UpdateProfileWrap>
       <div>
         <UserAvatar $variant="profile" src={user.avatarURL} alt="user avatar" />
