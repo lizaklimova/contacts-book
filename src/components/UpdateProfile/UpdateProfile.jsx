@@ -12,7 +12,7 @@ import {
 } from "./UpdateProfile.styled";
 
 const UpdateProfile = () => {
-  const { user, isLoading } = useAuth();
+  const { user, isAuthLoading } = useAuth();
   const dispatch = useDispatch();
 
   const onUserDataUpdate = (e) => {
@@ -28,7 +28,7 @@ const UpdateProfile = () => {
     dispatch(changeAvatar(e.target.files[0]));
   };
 
-  return isLoading ? (
+  return isAuthLoading ? (
     <Loader />
   ) : (
     <UpdateProfileWrap>

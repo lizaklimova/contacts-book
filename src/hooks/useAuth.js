@@ -10,12 +10,12 @@ export const useAuth = () => {
   const user = useSelector(selectUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
-  const isLoading = useSelector(selectIsAuthLoading);
+  const isAuthLoading = useSelector(selectIsAuthLoading);
 
   return {
     user,
     isLoggedIn,
     isRefreshing,
-    isLoading,
+    isAuthLoading,
   };
 };

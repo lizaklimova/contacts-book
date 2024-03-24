@@ -13,7 +13,7 @@ const authSlice = createSlice({
   initialState: {
     user: { name: null, email: null, avatarURL: null },
     token: null,
-    isLoading: false,
+    isAuthLoading: false,
     isLoggedIn: false,
     isRefreshing: false,
   },
@@ -23,57 +23,49 @@ const authSlice = createSlice({
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
-        state.isLoading = false;
+        state.isAuthLoading = false;
       })
       .addCase(login.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
-        state.isLoading = false;
+        state.isAuthLoading = false;
       })
       .addCase(logOut.fulfilled, (state) => {
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
-        state.isLoading = false;
+        state.isAuthLoading = false;
       })
       .addCase(refresh.pending, (state) => {
         state.isRefreshing = true;
+        state.isAuthLoading = true;
       })
       .addCase(refresh.fulfilled, (state, { payload }) => {
         state.user = payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
-        state.isLoading = false;
+        state.isAuthLoading = false;
       })
       .addCase(refresh.rejected, (state) => {
         state.isRefreshing = false;
-        state.isLoading = false;
+        state.isAuthLoading = false;
+      })
+      .addCase(changeAvatar.pending, (state) => {
+        state.isAuthLoading = true;
       })
       .addCase(changeAvatar.fulfilled, (state, { payload }) => {
         state.user.avatarURL = payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
-        state.isLoading = false;
+        state.isAuthLoading = false;
       })
       .addCase(updateUserName.fulfilled, (state, { payload }) => {
         state.user = payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
-        state.isLoading = false;
-      })
-      .addMatcher(
-        (action) => action.type.endsWith("/pending"),
-        (state) => {
-          state.isLoading = true;
-        }
-      )
-      .addMatcher(
-        (action) => action.type.endsWith("/rejected"),
-        (state) => {
-          state.isLoading = false;
-        }
-      ),
+        state.isAuthLoading = false;
+      }),
 });
 
 export const authReducer = authSlice.reducer;

@@ -16,7 +16,7 @@ import { info } from "notifications/notiflixInit";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const { isLoading } = useAuth();
+  const { isAuthLoading } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -159,7 +159,7 @@ const RegisterForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2, fontFamily: "Josefin Sans" }}
             >
-              {isLoading ? (
+              {isAuthLoading ? (
                 <Oval
                   visible={true}
                   height="20"

@@ -16,7 +16,7 @@ import { defaultTheme } from "styles";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const { isLoading } = useAuth();
+  const { isAuthLoading } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -128,7 +128,7 @@ const LoginForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2, fontFamily: "Josefin Sans" }}
             >
-              {isLoading ? (
+              {isAuthLoading ? (
                 <Oval
                   visible={true}
                   height="20"
