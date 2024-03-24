@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/contacts-book/static/css/main.cd2e038f.css",
-    "main.js": "/contacts-book/static/js/main.4b2cbd97.js",
+    "main.js": "/contacts-book/static/js/main.78919805.js",
     "static/js/613.00e24e43.chunk.js": "/contacts-book/static/js/613.00e24e43.chunk.js",
     "static/js/826.0b16cb66.chunk.js": "/contacts-book/static/js/826.0b16cb66.chunk.js",
     "static/js/687.1aa01dc6.chunk.js": "/contacts-book/static/js/687.1aa01dc6.chunk.js",
@@ -20,7 +20,7 @@
     "static/media/astronaut.png": "/contacts-book/static/media/astronaut.31f394ad16aabbe39186.png",
     "index.html": "/contacts-book/index.html",
     "main.cd2e038f.css.map": "/contacts-book/static/css/main.cd2e038f.css.map",
-    "main.4b2cbd97.js.map": "/contacts-book/static/js/main.4b2cbd97.js.map",
+    "main.78919805.js.map": "/contacts-book/static/js/main.78919805.js.map",
     "613.00e24e43.chunk.js.map": "/contacts-book/static/js/613.00e24e43.chunk.js.map",
     "826.0b16cb66.chunk.js.map": "/contacts-book/static/js/826.0b16cb66.chunk.js.map",
     "687.1aa01dc6.chunk.js.map": "/contacts-book/static/js/687.1aa01dc6.chunk.js.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.4b2cbd97.js"
+    "static/js/main.78919805.js"
   ]
 }
