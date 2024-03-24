@@ -8,12 +8,15 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
+import { Oval } from "react-loader-spinner";
 import { defaultTheme } from "styles";
+import { useAuth } from "hooks";
 import { register } from "../../redux/auth/operations";
 import { info } from "notifications/notiflixInit";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const { isLoading } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -156,7 +159,17 @@ const RegisterForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2, fontFamily: "Josefin Sans" }}
             >
-              Sign Up
+              {isLoading ? (
+                <Oval
+                  visible={true}
+                  height="20"
+                  width="20"
+                  color="#ffffff"
+                  ariaLabel="oval-loading"
+                />
+              ) : (
+                "Sign Up"
+              )}
             </Button>
           </Box>
         </Box>

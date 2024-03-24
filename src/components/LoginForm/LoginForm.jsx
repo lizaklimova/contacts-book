@@ -8,12 +8,15 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
 import { IoLockClosedOutline } from "react-icons/io5";
-import { defaultTheme } from "styles";
+import { Oval } from "react-loader-spinner";
 import { login } from "../../redux/auth/operations";
 import { info } from "notifications/notiflixInit";
+import { useAuth } from "hooks";
+import { defaultTheme } from "styles";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const { isLoading } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -125,7 +128,17 @@ const LoginForm = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2, fontFamily: "Josefin Sans" }}
             >
-              Sign In
+              {isLoading ? (
+                <Oval
+                  visible={true}
+                  height="20"
+                  width="20"
+                  color="#ffffff"
+                  ariaLabel="oval-loading"
+                />
+              ) : (
+                "Sign In"
+              )}
             </Button>
           </Box>
         </Box>
